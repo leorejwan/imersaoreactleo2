@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 
+//import styled from "styled-components";
+
+//const Button = styled(Link) //para fazer com que pegue o componente Link para estuilizá-lo
 const Button = styled.button`
     color: var(--white);
     border: 1px solid var(--white);
