@@ -1,18 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Home from './pages/Home';
 
 // para que a pagina nao recarregue a cada interação
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-
-function CadastroVideo(){
-  return(
-    <div>
-      cuishcishcuihsuisd
-    </div>
-  )
-}
+import CadastroVideo from './pages/cadastro/Video'
 
 ReactDOM.render(
   <BrowserRouter>
@@ -21,7 +14,7 @@ ReactDOM.render(
     {/* tenque ir do mais especifico para o mais geral */}
     <Route path="/cadastro/video" component={CadastroVideo} /> 
 
-    <Route path="/" component={App} exact /> 
+    <Route path="/" component={Home} exact /> 
     {/* <Route path="/" component={App} /> */}
 
     {/* solucao rapida para pagina 404 */}
