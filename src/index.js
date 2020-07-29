@@ -6,6 +6,7 @@ import Home from './pages/Home';
 // para que a pagina nao recarregue a cada interação
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import CadastroVideo from './pages/cadastro/Video'
+import CadastroCategoria from './pages/cadastro/categoria'
 
 ReactDOM.render(
   <BrowserRouter>
@@ -13,6 +14,8 @@ ReactDOM.render(
     {/* apenas de exemplo para outra rota atraves do 'react-router-dom'*/}
     {/* tenque ir do mais especifico para o mais geral */}
     <Route path="/cadastro/video" component={CadastroVideo} /> 
+    <Route path="/cadastro/categoria" component={CadastroCategoria} /> 
+
 
     <Route path="/" component={Home} exact /> 
     {/* <Route path="/" component={App} /> */}

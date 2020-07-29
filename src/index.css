@@ -23,3 +23,11 @@ body {
 a {
   color: inherit;
 } 
+
+/* para que a pagina do meio vá ate o final e o footer fique no fim da pagina */
+#root {
+  /* vh = 100% tela que aparece na tela */
+  min-height: calc(100vh - var(--bodyPaddingTop));
+  display: flex;
+  flex-direction: column;
+}
