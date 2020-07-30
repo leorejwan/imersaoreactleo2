@@ -12,7 +12,10 @@ function CadastroCategoria(){
       <PageDefault>
         <h1>Cadastro de categoria: {nomeDaCategoria}</h1>
 
-        <form>
+        <form onSubmit={function handleSubmit(infosDoEvento) {
+          infosDoEvento.preventDefault()
+          console.log('dashhsads')
+        }}>
 
           <label>
             Nome da Categoria:
