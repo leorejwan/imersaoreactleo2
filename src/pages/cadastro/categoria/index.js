@@ -12,16 +12,16 @@ function CadastroCategoria(){
       <PageDefault>
         <h1>Cadastro de categoria: {nomeDaCategoria}</h1>
 
-        <form onSubmit={function handleSubmit(infosDoEvento) {
+        <form style={{ background: nomeDaCategoria }} onSubmit={function handleSubmit(infosDoEvento) {
           infosDoEvento.preventDefault()
-          console.log('dashhsads')
           setCategorias([
             ...categorias, //concatena e nao sobescreve o que tinha
             nomeDaCategoria
           ]);
         }}>
 
-          <label>
+        <div>
+        <label>
             Nome da Categoria:
             <input
               type="text"
@@ -31,6 +31,35 @@ function CadastroCategoria(){
               }}
             />
           </label>
+        </div>
+
+        <div>
+        <label>
+            Descrição:
+            <textarea
+              type="text"
+              value={nomeDaCategoria} //valor no textbox
+              onChange={function functionHandler(infosDoEvento){
+                setNomeDaCategoria(infosDoEvento.target.value)
+              }}
+            />
+          </label>
+        </div>
+
+        <div>
+        <label>
+            Cor:
+            <input
+              type="color"
+              value={nomeDaCategoria} //valor no textbox
+              onChange={function functionHandler(infosDoEvento){
+                setNomeDaCategoria(infosDoEvento.target.value)
+              }}
+            />
+          </label>
+        </div>
+
+
 
           <button>
             Cadastrar
