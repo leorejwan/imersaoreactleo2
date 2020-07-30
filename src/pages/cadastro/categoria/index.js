@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 //state: guarda dados 
 
 function CadastroCategoria(){
-    let [nomeDaCategoria, setNomeDaCategoria] = useState('Valor Inicial'); //tem 2 valores: string filmes e uma funcao para alterar o valor
+    const [categorias, setCategorias] = useState(['Teste'])
+    const [nomeDaCategoria, setNomeDaCategoria] = useState('Valor Inicial'); //tem 2 valores: string filmes e uma funcao para alterar o valor
 
     return(
       <PageDefault>
@@ -19,8 +20,6 @@ function CadastroCategoria(){
               type="text"
               value={nomeDaCategoria} //valor no textbox
               onChange={function functionHandler(infosDoEvento){
-                console.log('[nome categoria]: ', nomeDaCategoria)
-                console.log('[infos do evento]: ', infosDoEvento.target.value) //mostra o que foi clicado
                 setNomeDaCategoria(infosDoEvento.target.value)
               }}
             />
@@ -30,6 +29,16 @@ function CadastroCategoria(){
             Cadastrar
           </button>
         </form>
+
+        <ul>
+          {categorias.map((categoria) => {
+            return(
+              <li key={categoria}>
+                {categoria}
+              </li>
+            )
+          })}
+        </ul>
 
       <Link to="/">
         Ir para Home
