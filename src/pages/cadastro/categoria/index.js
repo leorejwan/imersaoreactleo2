@@ -6,17 +6,24 @@ import { Link } from 'react-router-dom';
 
 function CadastroCategoria(){
     const [categorias, setCategorias] = useState(['Teste'])
-    const [nomeDaCategoria, setNomeDaCategoria] = useState('Valor Inicial'); //tem 2 valores: string filmes e uma funcao para alterar o valor
+
+    const valoresIniciais = {
+      nome: 'AAAAAAAA',
+      descricao: 'BBBBBBBBB',
+      cor: '#999999'
+    }
+
+    const [values, setValues] = useState(valoresIniciais); //tem 2 valores: string filmes e uma funcao para alterar o valor
 
     return(
       <PageDefault>
-        <h1>Cadastro de categoria: {nomeDaCategoria}</h1>
+        <h1>Cadastro de categoria: {values.nome}</h1>
 
-        <form style={{ background: nomeDaCategoria }} onSubmit={function handleSubmit(infosDoEvento) {
+        <form onSubmit={function handleSubmit(infosDoEvento) {
           infosDoEvento.preventDefault()
           setCategorias([
             ...categorias, //concatena e nao sobescreve o que tinha
-            nomeDaCategoria
+            values
           ]);
         }}>
 
@@ -25,9 +32,9 @@ function CadastroCategoria(){
             Nome da Categoria:
             <input
               type="text"
-              value={nomeDaCategoria} //valor no textbox
+              value={values.nome} //valor no textbox
               onChange={function functionHandler(infosDoEvento){
-                setNomeDaCategoria(infosDoEvento.target.value)
+                // setNomeDaCategoria(infosDoEvento.target.value)
               }}
             />
           </label>
@@ -38,9 +45,9 @@ function CadastroCategoria(){
             Descrição:
             <textarea
               type="text"
-              value={nomeDaCategoria} //valor no textbox
+              value={values.descricao} //valor no textbox
               onChange={function functionHandler(infosDoEvento){
-                setNomeDaCategoria(infosDoEvento.target.value)
+                // setNomeDaCategoria(infosDoEvento.target.value)
               }}
             />
           </label>
@@ -51,9 +58,9 @@ function CadastroCategoria(){
             Cor:
             <input
               type="color"
-              value={nomeDaCategoria} //valor no textbox
+              value={values.cor} //valor no textbox
               onChange={function functionHandler(infosDoEvento){
-                setNomeDaCategoria(infosDoEvento.target.value)
+                // setNomeDaCategoria(infosDoEvento.target.value)
               }}
             />
           </label>
