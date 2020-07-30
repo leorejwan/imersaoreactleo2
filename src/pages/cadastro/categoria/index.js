@@ -15,6 +15,10 @@ function CadastroCategoria(){
         <form onSubmit={function handleSubmit(infosDoEvento) {
           infosDoEvento.preventDefault()
           console.log('dashhsads')
+          setCategorias([
+            ...categorias, //concatena e nao sobescreve o que tinha
+            nomeDaCategoria
+          ]);
         }}>
 
           <label>
@@ -34,9 +38,9 @@ function CadastroCategoria(){
         </form>
 
         <ul>
-          {categorias.map((categoria) => {
+          {categorias.map((categoria, indice) => {
             return(
-              <li key={categoria}>
+              <li key={`${categoria}${indice}`}>
                 {categoria}
               </li>
             )
