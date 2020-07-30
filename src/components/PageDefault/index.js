@@ -14,7 +14,6 @@ const Main = styled.main`
 
 function PageDefault(props){
     return(
-        // Pra nao ter tags extras demais
         <React.Fragment>
             <Menu />
                 <Main>
