@@ -15,6 +15,20 @@ function CadastroCategoria(){
 
     const [values, setValues] = useState(valoresIniciais); //tem 2 valores: string filmes e uma funcao para alterar o valor
 
+    function setValue(chave, valor) {
+      //chave: nome, descricao, bla,ble,bli...
+      setValues({
+        ...values,
+        [chave]: valor //pega a chave correta e define o valor dela. Assim, a chave é um dado dinamico para todos os campos! 
+      })
+    }
+
+    function handleChange(infosDoEvento){
+      setValue(
+        infosDoEvento.target.getAttribute('name'),
+        infosDoEvento.target.value)
+    }
+
     return(
       <PageDefault>
         <h1>Cadastro de categoria: {values.nome}</h1>
@@ -32,10 +46,9 @@ function CadastroCategoria(){
             Nome da Categoria:
             <input
               type="text"
-              value={values.nome} //valor no textbox
-              onChange={function functionHandler(infosDoEvento){
-                // setNomeDaCategoria(infosDoEvento.target.value)
-              }}
+              value={values.nome} //valor no textbox //tambem pode ser values['nome']
+              name="nome"
+              onChange={handleChange}
             />
           </label>
         </div>
@@ -46,9 +59,8 @@ function CadastroCategoria(){
             <textarea
               type="text"
               value={values.descricao} //valor no textbox
-              onChange={function functionHandler(infosDoEvento){
-                // setNomeDaCategoria(infosDoEvento.target.value)
-              }}
+              name="descricao"
+              onChange={handleChange}
             />
           </label>
         </div>
@@ -59,9 +71,8 @@ function CadastroCategoria(){
             <input
               type="color"
               value={values.cor} //valor no textbox
-              onChange={function functionHandler(infosDoEvento){
-                // setNomeDaCategoria(infosDoEvento.target.value)
-              }}
+              name="cor"
+              onChange={handleChange}
             />
           </label>
         </div>
