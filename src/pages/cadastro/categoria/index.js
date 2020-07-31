@@ -5,14 +5,13 @@ import { Link } from 'react-router-dom';
 //state: guarda dados 
 
 function CadastroCategoria(){
-    const [categorias, setCategorias] = useState(['Teste'])
-
-    const valoresIniciais = {
-      nome: 'AAAAAAAA',
-      descricao: 'BBBBBBBBB',
-      cor: '#999999'
-    }
-
+  
+  const valoresIniciais = {
+    nome: '',
+    descricao: '',
+    cor: ''
+  }
+    const [categorias, setCategorias] = useState([])
     const [values, setValues] = useState(valoresIniciais); //tem 2 valores: string filmes e uma funcao para alterar o valor
 
     function setValue(chave, valor) {
@@ -39,6 +38,9 @@ function CadastroCategoria(){
             ...categorias, //concatena e nao sobescreve o que tinha
             values
           ]);
+
+          setValues(valoresIniciais)
+
         }}>
 
         <div>
