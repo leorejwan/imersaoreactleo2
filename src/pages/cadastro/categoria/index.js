@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PageDefault from '../../../components/PageDefault';
 import { Link } from 'react-router-dom';
+import FormField from '../../../components/FormField';
 
 //state: guarda dados 
 
@@ -23,6 +24,10 @@ function CadastroCategoria(){
     }
 
     function handleChange(infosDoEvento){
+      // const { getAttribute, value } = infosDoEvento.target; //nao deu certo isso
+      // setValue(
+      //   getAttribute('name'),
+      //   value);
       setValue(
         infosDoEvento.target.getAttribute('name'),
         infosDoEvento.target.value)
@@ -35,7 +40,7 @@ function CadastroCategoria(){
         <form onSubmit={function handleSubmit(infosDoEvento) {
           infosDoEvento.preventDefault()
           setCategorias([
-            ...categorias, //concatena e nao sobescreve o que tinha
+            ...categorias,
             values
           ]);
 
@@ -43,19 +48,25 @@ function CadastroCategoria(){
 
         }}>
 
-        <div>
-        <label>
-            Nome da Categoria:
-            <input
-              type="text"
-              value={values.nome} //valor no textbox //tambem pode ser values['nome']
-              name="nome"
-              onChange={handleChange}
-            />
-          </label>
-        </div>
+        <FormField 
+          label="Nome da Categoria"
+          type="text"
+          name="nome"
+          value={values.nome}
+          onChange={handleChange}
+        /> 
 
-        <div>
+
+        <FormField 
+          label="Descricao"
+          type="text"
+          name="descricao"
+          value={values.descricao}
+          onChange={handleChange}
+        /> 
+
+
+        {/* <div>
         <label>
             Descrição:
             <textarea
@@ -65,9 +76,18 @@ function CadastroCategoria(){
               onChange={handleChange}
             />
           </label>
-        </div>
+        </div> */}
 
-        <div>
+
+        <FormField 
+          label="Cor"
+          type="color"
+          name="cor"
+          value={values.cor}
+          onChange={handleChange}
+        /> 
+
+        {/* <div>
         <label>
             Cor:
             <input
@@ -77,7 +97,7 @@ function CadastroCategoria(){
               onChange={handleChange}
             />
           </label>
-        </div>
+        </div> */}
 
 
 
