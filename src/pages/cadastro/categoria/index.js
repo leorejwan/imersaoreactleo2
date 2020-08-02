@@ -36,6 +36,13 @@ function CadastroCategoria(){
     useEffect(() => {
       console.log("jshdjhs")
 
+      const urlServer = "http://localhost:8080/categorias/"
+      fetch(urlServer)
+      .then(async (respostaDoServidor) => {
+        const resposta = await respostaDoServidor.json()
+        console.log(resposta)
+      })
+
     }, 
     [
       values.nome
