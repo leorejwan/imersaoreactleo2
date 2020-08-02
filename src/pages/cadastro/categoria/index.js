@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageDefault from '../../../components/PageDefault';
 import { Link } from 'react-router-dom';
 import FormField from '../../../components/FormField';
@@ -32,6 +32,15 @@ function CadastroCategoria(){
         infosDoEvento.target.getAttribute('name'),
         infosDoEvento.target.value)
     }
+
+    useEffect(() => {
+      console.log("jshdjhs")
+
+    }, 
+    [
+      values.nome
+    ]
+    );
 
     return(
       <PageDefault>
@@ -105,6 +114,12 @@ function CadastroCategoria(){
             Cadastrar
           </button>
         </form>
+
+        {categorias.length === 0 && (
+          <div>
+            loading...
+          </div> 
+        )}
 
         <ul>
           {categorias.map((categoria, indice) => {
