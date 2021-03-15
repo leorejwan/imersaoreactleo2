@@ -1,4 +1,8 @@
+# Leoflix, a nova aplicação de Streaming totalmente gratuita!
 
+## Desenvolvido durante a imersão React da Alura
+
+## Utilizado HTML, CSS, javascript e, principalmente, React.js
 
 ![Screenshot 1](https://user-images.githubusercontent.com/18248913/111197364-27431700-859d-11eb-8c74-97a410b37b23.png)
 
